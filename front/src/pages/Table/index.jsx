@@ -10,6 +10,7 @@ import Paper from "@mui/material/Paper";
 import { getAll, getById, postData, deleteById } from "../../api/httprequest";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { IconButton } from "@mui/material";
+import Swal from "sweetalert2";
 
 export default function AddTable() {
   const [watches, setWatches] = useState();
@@ -23,10 +24,25 @@ export default function AddTable() {
   }, []);
 
   const handleDelete = async (id) => {
-    const deletedWatch = await deleteById(id);
-    const updatedWatches = watches.filter((watch) => watch._id != id);
-    setWatches(updatedWatches);
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    });
+
+    if (result.isConfirmed) {
+      const deletedWatch = await deleteById(id);
+      const updatedWatches = watches.filter((watch) => watch._id !== id);
+      setWatches(updatedWatches);
+
+      Swal.fire("Deleted!", "The watch has been deleted.", "success");
+    }
   };
+
 
   return (
     <div

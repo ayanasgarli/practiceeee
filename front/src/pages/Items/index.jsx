@@ -35,14 +35,14 @@ const Items = () => {
                   <div className="card" key={watch._id}>
                     <img src={watch.image} alt="" />
                     <div className="texts">
-                      <h3>
+                      <h4>
                         <Link
                           to={`/${watch._id}`}
                           style={{ color: "#444444", textDecoration: "none" }}
                         >
                           {watch.name}
                         </Link>
-                      </h3>
+                      </h4>
                       <p>${watch.price}</p>
                     </div>
                     <button>Add to cart</button>

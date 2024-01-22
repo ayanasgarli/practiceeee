@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 .container {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
   color: black;
   padding: 30px;
@@ -42,4 +46,23 @@
       }
     }
   }
+  .burger{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+    .container {
+      .links {
+        display: none;
+      }
+      .icons{
+        display: none;
+      }
+      .burger{
+        display: block;
+      }
+    }
+    
+
 }

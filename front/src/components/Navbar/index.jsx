@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import "./index.scss";
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 const Navbar = () => {
@@ -12,11 +13,10 @@ const Navbar = () => {
     <>
       <header>
         <div className="container">
-          <div className="row">
-            <div className="col-3">
+            <div className="img">
              <img src="https://preview.colorlib.com/theme/timezone/assets/img/logo/logo.png" alt="" />
             </div>
-            <div className="col-6 links">
+            <div className="links">
               <Link className="sections" to="/">
                 Home
               </Link>
@@ -39,14 +39,16 @@ const Navbar = () => {
                 Wishlist
               </Link>
             </div>
-            <div className="col-3 icons">
+            <div className="icons">
                 <span><SearchIcon/></span>
                 <span><Person2OutlinedIcon/></span>
                 <span><ShoppingCartOutlinedIcon/></span>
                 
             </div>
+            <div className="burger">
+              <MenuIcon/>
+            </div>
           </div>
-        </div>
       </header>
     </>
   );
