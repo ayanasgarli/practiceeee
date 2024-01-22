@@ -11,61 +11,56 @@ let port = process.env.PORT
 app.use(express.json())
 
 // Schemas
-const MealsSchema = new Schema({
+const WatchesSchema = new Schema({
     name: String,
-    description: String,
     price: Number,
-    type: String,
-  
+    image: String,  
 });
-const Meals = mongoose.model("Meals",MealsSchema)
+const Watches = mongoose.model("Watches",WatchesSchema)
 
-app.get("/api/meals",async(req,res)=>{
-    let meals = await Meals.find()
-    if(Meals.length>0){
-        res.send(meals)
+app.get("/api/watches",async(req,res)=>{
+    let watches = await Watches.find()
+    if(Watches.length>0){
+        res.send(watches)
     }else{
         res.send("Data not found")
     }
 })
 
-app.get("/api/meals/:id",async(req,res)=>{
+app.get("/api/watches/:id",async(req,res)=>{
     let { id } = req.params
-    let findedMeal = await Meals.findById(id)
-    if(findedMeal){
-        res.send(findedMeal)
+    let findedWatch = await Watches.findById(id)
+    if(findedWatch){
+        res.send(findedWatch)
     }else{
         res.send("Data not found")
     }
   })
-  app.delete("/api/meals/:id",async(req,res)=>{
+  app.delete("/api/watches/:id",async(req,res)=>{
     let { id } = req.params
-    let deletedMeal = await Meals.findByIdAndDelete(id)
-    if(deletedMeal){
-        res.send(deletedMeal)
+    let deletedWatch = await Watches.findByIdAndDelete(id)
+    if(deletedWatch){
+        res.send(deletedWatch)
     }else{
         res.send("Data not found")
     }
   })
-  app.post("/api/meals",async(req,res)=>{
-    let { name, description, price, type } = req.body
+  app.post("/api/watches",async(req,res)=>{
+    let { name, price, image } = req.body
     let newData={}
     if(name){
         newData.name=name
     }
-    if(description){
-        newData.description=description
-    }
     if(price){
         newData.price=price
     }
-    if(type){
-        newData.type=type
+    if(image){
+        newData.image=image
     }
-    let newMeal = new Meals(newData)
+    let newWatch = new Watches(newData)
   
-    let savedMeal = await newMeal.save()
-    res.send(savedMeal)
+    let savedWatch = await newWatch.save()
+    res.send(savedWatch)
   
   })
   

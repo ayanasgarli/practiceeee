@@ -1,0 +1,40 @@
+.items {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .item {
+    text-align: center;
+    h2 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+    p {
+      color: #777777;
+    }
+  }
+  .container {
+    .row{
+        .card{
+            text-align: center;
+            border: none;
+
+            &:hover{
+                
+            
+            }
+            .texts{
+                border-top: 3px solid #FF2020;
+                color: #444444;
+                text-decoration: none;
+            }
+            button{
+              background-color: #FF2020;
+              color: white;
+              border: none;
+              padding: 10px;
+              font-size: 16px;
+            }
+        }
+    }
+  }
+}

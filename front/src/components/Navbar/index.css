@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: white;
+  color: black;
+  padding: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+}
+.container .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .links .sections {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 10px;
+  transition: color 0.5s;
+}
+.container .links .sections:hover {
+  color: #ff1e24;
+}
+.container .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .icons span {
+  padding: 0 10px;
+  transition: color 0.5s;
+  text-decoration: none;
+}
+.container .icons span:hover {
+  color: #ff1e24;
+}/*# sourceMappingURL=index.css.map */

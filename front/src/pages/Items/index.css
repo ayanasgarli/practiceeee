@@ -1,0 +1,30 @@
+.items {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.items .item {
+  text-align: center;
+}
+.items .item h2 {
+  font-size: 48px;
+  font-weight: 700;
+}
+.items .item p {
+  color: #777777;
+}
+.items .container .row .card {
+  text-align: center;
+  border: none;
+}
+.items .container .row .card .texts {
+  border-top: 3px solid #FF2020;
+  color: #444444;
+  text-decoration: none;
+}
+.items .container .row .card button {
+  background-color: #FF2020;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+}/*# sourceMappingURL=index.css.map */
